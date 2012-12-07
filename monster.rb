@@ -5,8 +5,10 @@ class Monster
 		@colors = ["blue", "purple", "red", "orange", "yellow", "green"]
 		@moods = ["angry", "sleepy", "restless", "happy", "joyfull"]
 		@hunger_levels = ["starving", "hungry", "not hungry", "full"]
+		@foods = ["coockie", "bananapie", "girllkorv", "peasoup"]
 		@skins = ["scaly", "lethery", "fury", "stone hard", "bloby"]
 		@cities = ["Tokyo", "Tokyo", "Stockholm", "London", "Washinton", "Area 51"]
+		@ffood = @foods[rand(@foods.size)]
 		@skin = @skins[rand(@skins.size)]
 		@color = @colors[rand(@colors.size)]
 		@name = gets.chomp.downcase.capitalize
@@ -42,7 +44,7 @@ class Monster
 				if shot != 3
 					puts "your monster was one of the lucky ones! good for you."
 				else shot = 3
-					puts "sorry your monster was shot..."
+					puts "sorry, your monster was shot..."
 					todo = 5
 				end
 			elsif todo == 4
@@ -54,13 +56,12 @@ class Monster
 					@city = @cities[rand(@cities.size)]
 					puts "#{@name} succesfully destoyed #{@city}"
 				end
-			elsif todo == 5
-				puts "goodbye!"
 			end
 		end
-		sleep 3
+		puts "goodbye!"
+		sleep 2
 		system "clear"
-	end
+	end  
 end
 
 puts "please enter the name of your new monster"
